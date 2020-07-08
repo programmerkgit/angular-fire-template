@@ -5,7 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Step
 
 1. edit src/environments/environment.ts and src/environments/environments.prod.ts
-2. 
+2. ng add @angular/fire
+3. edit angular.json and change project name
 
 ```
 npm install
