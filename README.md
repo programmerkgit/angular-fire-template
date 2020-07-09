@@ -2,20 +2,32 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-# Step
+# このプロジェクトが設定した内容
+- `src/environments/environment.ts`, `src/environments/environments.prod.ts`のテンプレートの記述
+- `ng add @angular/fire`を実行し関連モジュールをインストール
+- `src/app/app.module.ts`にAngularFireModuleを設定 
 
-1. edit src/environments/environment.ts and src/environments/environments.prod.ts
-2. ng add @angular/fire
-3. edit angular.json and change project name
+
+# Firebaseプロジェクトの設定
+- Firebaseで今回のプロジェクトを作成する。
+- Database, Storage Hosting, Analyticsなど各ツールを有効にする
+- Hostingのページではカスタムドメインがあればテキスレコードを記述する
+
+# Firebaseの設定
+![setting of firebase](https://firebasestorage.googleapis.com/v0/b/storage-ui.appspot.com/o/1594254623860?alt=media&token=54b0a85e-5ba0-459d-ba68-4fd4b9c0d2f4)
+
+表示された設定パラメーターを`src/environments/environment.ts`ファイルに貼り付ける
+
+# 手順
 
 ```
 npm install
 firebase login
+firebase list // project 一覧を表示
+firebase use <project> // 表示されたプロジェクトのうち今回利用するプロジェクトを利用
 firebase init
 ng deploy
 ```
-
-
 
 ## Development server
 
