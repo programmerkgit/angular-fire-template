@@ -10,7 +10,7 @@ import { UserDetailComponent } from "./user-detail/user-detail.component";
 const routes: Routes = [
   {path: "create", component: UserCreateComponent},
   {path: ":id/delete", component: UserDeleteComponent},
-  {path: "edit", component: UserEditComponent},
+  {path: ":id/edit", component: UserEditComponent},
   {path: ":id", component: UserDetailComponent},
   {path: "", component: UserListComponent},
 ];
