@@ -1,1 +1,99 @@
-<p>user-detail works!</p>
+<!--All input type-->
+<!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input-->
+<form [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label>Enter your name</mat-label>
+    <input formControlName="name" placeholder="name" matInput type="text">
+    <mat-error *ngIf="formGroup.get('name').errors?.inappropriateName">You cannot use this name</mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field hintLabel="*required">
+    <mat-label>Enter your email</mat-label>
+    <input id="email" type="email" matInput formControlName="email">
+    <mat-error *ngIf="formGroup.get('email').errors?.email">Invalid Email</mat-error>
+    <mat-error *ngIf="formGroup.get('email').errors?.required">Should not be blank</mat-error>
+  </mat-form-field>
+  <br>
+
+  <label id="example-radio-group-label">Choose Your Gender</label>
+  <mat-radio-group class="example-radio-group" aria-labelledby="example-radio-group-label" formControlName="gender">
+    <mat-radio-button value="male">Male</mat-radio-button>
+    <mat-radio-button value="female">Female</mat-radio-button>
+  </mat-radio-group>
+  <mat-error
+    *ngIf="(formGroup.get('gender').touched || formGroup.get('gender').dirty) && formGroup.get('gender').errors?.required">
+    Required
+  </mat-error>
+  <br>
+
+  <mat-form-field>
+    <mat-label>Enter Your Career</mat-label>
+    <textarea formControlName="career" matInput placeholder="I entered junior high school at age..."></textarea>
+    <mat-error *ngIf="formGroup.get('career').errors?.maxlength">Too long</mat-error>
+  </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <mat-label>Enter your interest</mat-label>
+    <input matInput list="interest" id="interest-i">
+    <datalist id="interest">
+      <option value="Football"></option>
+      <option value="Tennis"></option>
+      <option value="baseball"></option>
+    </datalist>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>role</mat-label>
+    <mat-select>
+      <mat-optgroup label="admin">
+        <mat-option value="admin">admin</mat-option>
+        <mat-option value="system-admin">system-admin</mat-option>
+      </mat-optgroup>
+      <mat-optgroup label="general">
+        <mat-option value="general">general</mat-option>
+        <mat-option value="beginner">beginner</mat-option>
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Join Team</mat-label>
+    <mat-select multiple formControlName="join">
+      <mat-select-trigger>custom trigger</mat-select-trigger>
+      <mat-option value="team1">team1</mat-option>
+      <mat-option value="team2">team2</mat-option>
+      <mat-option value="team3">team3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div formArrayName="teams">
+    <mat-form-field>
+      <mat-label>Teams</mat-label>
+      <input matInput formControlName="0">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="1">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="2">
+    </mat-form-field>
+  </div>
+  <mat-progress-bar value="20"></mat-progress-bar>
+  <div formGroupName="address">
+    <h3>address</h3>
+    <mat-form-field>
+      <mat-label>Enter your street</mat-label>
+      <input matInput type="text" formControlName="street">
+      <mat-error *ngIf="formGroup.get('address.street').errors.street">should not be Tokyo</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Enter you city</mat-label>
+      <input matInput type="text" formControlName="city">
+    </mat-form-field>
+  </div>
+  <div>
+    <button type="submit" (click)="getValue()">保存</button>
+  </div>
+</form>

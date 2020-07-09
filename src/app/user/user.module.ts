@@ -7,7 +7,16 @@ import { UserDeleteComponent } from "./user-delete/user-delete.component";
 import { UserRoutingModule } from "./user-routing.module";
 import { UserCreateComponent } from "./user-create/user-create.component";
 import { UserComponent } from "./user.component";
-import { MatFormFieldModule, MatInputModule, MatPaginatorModule, MatSortModule, MatTableModule } from "@angular/material";
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatPaginatorModule,
+  MatProgressBarModule, MatRadioModule,
+  MatSelectModule,
+  MatSortModule,
+  MatTableModule
+} from "@angular/material";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -21,12 +30,17 @@ import { MatFormFieldModule, MatInputModule, MatPaginatorModule, MatSortModule, 
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     UserRoutingModule,
+    MatProgressBarModule,
     MatPaginatorModule,
     MatFormFieldModule,
     MatSortModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatRadioModule,
   ]
 })
 export class UserModule {

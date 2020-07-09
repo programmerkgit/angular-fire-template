@@ -1,0 +1,48 @@
+<!--All input type-->
+<!--https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input-->
+<form>
+  <div>
+    <label for="name">name</label>
+    <input id="name" type="text">
+  </div>
+  <div>
+    <label for="email">email</label>
+    <input id="email" type="email">
+  </div>
+  <div>
+    <label for="interest-i">interset</label>
+    <input list="interest" id="interest-i">
+    <datalist id="interest">
+      <option value="Football"></option>
+      <option value="Tennis"></option>
+      <option value="baseball"></option>
+    </datalist>
+  </div>
+  <div>
+    <label for="role">role</label>
+    <select id="role">
+      <optgroup label="admin">
+        <option value="admin" label="admin"></option>
+        <option value="system-admin" label="system-admin"></option>
+      </optgroup>
+      <optgroup label="normal">
+        <option value="general" label="general"></option>
+        <option value="beginner" label="beginner"></option>
+      </optgroup>
+    </select>
+  </div>
+  <div>
+    <label for="level">Level</label>
+    <progress id="level" max="100" value="20"></progress>
+  </div>
+  <fieldset>
+    <legend>Choose your sex</legend>
+    <label for="male">male</label>
+    <input type="radio" id="male" name="male">
+    <label for="female">female</label>
+    <input type="radio" id="female" name="female">
+  </fieldset>
+  <div>
+    <button type="submit">保存</button>
+  </div>
+</form>
